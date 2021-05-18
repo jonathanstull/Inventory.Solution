@@ -1,0 +1,40 @@
+body {
+  font-family: Charter, Georgia, 'Times New Roman', Times, serif;
+  background: #eee;
+  font-size: 20px;
+  main, footer {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    position: relative; 
+    .table-wrap {
+      width: 100%;
+      overflow-x: scroll;
+      border: 2px solid #000;
+      table {
+        border-spacing: 0;
+        thead {
+          tr {
+            th {
+              text-align: left;
+              padding: 5px;
+              background: #000;
+              color: #eee;
+            }
+          }
+        }
+        tbody {
+          tr {
+            td {
+              padding: 5px;
+              border-top: 2px solid #bbb;
+              ~ td {
+                border-left: 2px solid #bbb;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

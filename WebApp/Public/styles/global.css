@@ -1,0 +1,39 @@
+body {
+  font-family: Charter, Georgia, 'Times New Roman', Times, serif;
+  background: #eee;
+  font-size: 20px;
+}
+
+body main, body footer {
+  width: 100%;
+  max-width: 600px;
+  margin: auto;
+  position: relative;
+}
+
+body main .table-wrap, body footer .table-wrap {
+  width: 100%;
+  overflow-x: scroll;
+  border: 2px solid #000;
+}
+
+body main .table-wrap table, body footer .table-wrap table {
+  border-spacing: 0;
+}
+
+body main .table-wrap table thead tr th, body footer .table-wrap table thead tr th {
+  text-align: left;
+  padding: 5px;
+  background: #000;
+  color: #eee;
+}
+
+body main .table-wrap table tbody tr td, body footer .table-wrap table tbody tr td {
+  padding: 5px;
+  border-top: 2px solid #bbb;
+}
+
+body main .table-wrap table tbody tr td ~ td, body footer .table-wrap table tbody tr td ~ td {
+  border-left: 2px solid #bbb;
+}
+/*# sourceMappingURL=global.css.map */
