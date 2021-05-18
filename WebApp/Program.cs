@@ -1,7 +1,7 @@
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
 
-namespace ToDoList
+namespace RocksInventory
 {
   public class Program
   {
@@ -10,6 +10,7 @@ namespace ToDoList
       var host = new WebHostBuilder()
         .UseKestrel()
         .UseContentRoot(Directory.GetCurrentDirectory())
+        .UseWebRoot("Public")
         .UseIISIntegration()
         .UseStartup<Startup>()
         .Build();

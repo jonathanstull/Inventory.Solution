@@ -6,7 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using RocksInventory.Models;
 
-namespace ToDoList
+namespace RocksInventory
 {
   public class Startup
   {
