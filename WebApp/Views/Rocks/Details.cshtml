@@ -1,0 +1,14 @@
+@{
+  Layout = "_Layout";
+}
+
+@model RocksInventory.Models.Rock
+
+<h2>Rock Details</h2>
+<hr />
+<h3>@Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)<h3>
+<h3>@Html.DisplayNameFor(model => model.Color): @Html.DisplayFor(model => model.Color)<h3>
+<h3>@Html.DisplayNameFor(model => model.Hardness): @Html.DisplayFor(model => model.Hardness)<h3>
+<h3>@Html.DisplayNameFor(model => model.Classification): @Html.DisplayFor(model => model.Classification)<h3>
+<h3>@Html.DisplayNameFor(model => model.Acquired): @Html.DisplayFor(model => model.Acquired)<h3>
+<p>@Html.ActionLink("Back to list", "Index")</p>

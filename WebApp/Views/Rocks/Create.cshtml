@@ -1,0 +1,37 @@
+<!-- prettier-ignore -->
+@{ Layout = "_Layout"; } 
+
+@using System;
+
+@{ 
+  var now   = @DateTime.Now; 
+  var day   = now.Day.ToString();
+  var month = now.Month.ToString();
+  var year  = now.Year.ToString();
+}
+<!-- prettier-ignore-end -->
+
+@model RocksInventory.Models.Rock
+
+<h4>Add a new rock</h4>
+@using (Html.BeginForm())
+{
+    @Html.LabelFor(model => model.Description)
+    @Html.TextBoxFor(model => model.Description)
+    @Html.LabelFor(model => model.Classification)
+    @Html.TextBoxFor(model => model.Classification)
+    @Html.LabelFor(model => model.Hardness)
+    @Html.EditorFor(model => model.Hardness, 
+      new { htmlAttributes = new { 
+        @type = "number", @min = "0", @max = "10", @step = "0.1", @value = "5.0" 
+    }})
+    @Html.LabelFor(model => model.Color)
+    @Html.TextBoxFor(model => model.Color)
+    @Html.LabelFor(model => model.Acquired)
+    @Html.EditorFor(model => model.Acquired, 
+      new { htmlAttributes = new { 
+        @type="date", @value="@year-@month-@day"
+    }})
+    <input type="submit" value="Add new rock" />
+}
+<p>@Html.ActionLink("Show all rocks", "Index")</p>

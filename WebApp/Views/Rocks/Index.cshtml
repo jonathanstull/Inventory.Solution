@@ -1,0 +1,47 @@
+@{  Layout = "_Layout"; }
+
+@using RocksInventory.Models;
+@using System.Reflection;
+
+<h1>Items</h1>
+
+@if (@Model.Count == 0)
+{
+  <h3>No items have been added yet!</h3>
+} 
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Classification</th>
+        <th>Hardness</th>
+        <th>Color</th>
+        <th>Acquired</th>
+      </tr>
+    </thead>
+    @foreach(Rock rock in Model)
+    {
+      <tr>
+      @foreach (PropertyInfo pInfo in typeof(Rock).GetProperties())
+      {
+        if (pInfo.CanRead)
+        {
+          object value = pInfo.GetValue(rock, null);
+          
+          @if (pInfo.Name == "Id" || pInfo.Name == "Description")
+          {
+            <td>@Html.ActionLink($"{value}", "Details", new { id = rock.Id })</td>
+          } else {
+            <td>@value</td>
+          }
+        
+        }
+      }
+      </tr>
+    }
+  </table>
+</div>
+
+<p>@Html.ActionLink("Add new item", "Create")</p>
