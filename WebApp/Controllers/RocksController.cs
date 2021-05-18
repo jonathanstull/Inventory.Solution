@@ -32,5 +32,11 @@ namespace RocksInventory.Controllers
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
+
+    public ActionResult Details(int id)
+    {
+      Rock thisRock = _db.Rocks.FirstOrDefault(item => item.Id == id);
+      return View(thisRock);
+    }
   }
 }

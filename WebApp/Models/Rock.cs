@@ -4,7 +4,7 @@ namespace RocksInventory.Models
 {
   public class Rock
   {
-    public int RockId { get; set; }
+    public int Id { get; set; }
     public string Description { get; set; }
     public string Classification { get; set; }
     public int Hardness { get; set; }
