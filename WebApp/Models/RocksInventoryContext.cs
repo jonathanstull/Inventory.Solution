@@ -4,7 +4,7 @@ namespace RocksInventory.Models
 {
   public class RocksInventoryContext : DbContext
   {
-    public DbSet<Rock> Items { get; set; }
+    public DbSet<Rock> Rocks { get; set; }
 
     public RocksInventoryContext(DbContextOptions options) : base(options) { }
   }
